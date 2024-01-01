@@ -173,6 +173,7 @@
         android:textSize="18sp"
         android:background="@drawable/rounded_background"
         android:layout_below="@id/suggestion_title"
+        android:textColor="@color/black"
         />
 
     <TextView
