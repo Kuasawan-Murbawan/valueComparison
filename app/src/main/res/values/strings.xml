@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ValueComparison</string>
+    <string name="berbaloi_a">A lebih berbaloi</string>
+    <string name="berbaloi_b">B lebih berbaloi</string>
+</resources>

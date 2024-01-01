@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calculate"
+    android:background="#F4E8E8"
+    >
+
+    <TextView
+        android:id="@+id/title_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Calculate Value"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/title_calculate"
+        >
+        <RelativeLayout
+            android:id="@+id/productA_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:background="@drawable/rounded_background"
+            android:backgroundTint="#DD9D9D"
+            >
+
+
+            <TextView
+                android:id="@+id/productA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:textSize="25sp"
+                android:textColor="#000000"
+                android:layout_centerHorizontal="true"
+                />
+
+            <EditText
+                android:id="@+id/quantityA"
+                android:layout_width="167dp"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"
+                android:layout_below="@+id/productA"
+                android:layout_centerHorizontal="true"
+                android:inputType="numberDecimal"
+                />
+
+            <EditText
+                android:id="@+id/volumeA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quantityA"
+                android:hint="Volume per Quantity"
+                android:layout_centerHorizontal="true"
+                android:inputType="numberDecimal"
+                />
+
+            <EditText
+                android:id="@+id/priceA"
+                android:layout_width="167dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/volumeA"
+                android:hint="Price"
+                android:layout_centerHorizontal="true"
+                android:inputType="numberDecimal"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/productB_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/rounded_background"
+            android:backgroundTint="#AA8F98"
+            android:layout_marginLeft="15dp"
+            >
+
+
+            <TextView
+                android:id="@+id/productB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B"
+                android:textSize="25sp"
+                android:textColor="#000000"
+                android:layout_centerHorizontal="true"
+                />
+
+            <EditText
+                android:id="@+id/quantityB"
+                android:layout_width="167dp"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"
+                android:layout_below="@+id/productB"
+                android:layout_centerHorizontal="true"
+                android:inputType="numberDecimal"
+                />
+
+            <EditText
+                android:id="@+id/volumeB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quantityB"
+                android:hint="Volume per Quantity"
+                android:layout_centerHorizontal="true"
+                android:inputType="numberDecimal"
+                />
+
+            <EditText
+                android:id="@+id/priceB"
+                android:layout_width="167dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/volumeB"
+                android:hint="Price"
+                android:layout_centerHorizontal="true"
+                android:inputType="numberDecimal"
+                />
+
+        </RelativeLayout>
+    </GridLayout>
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:layout_below="@id/gridLayout"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/suggestion_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suggestion"
+        android:layout_marginLeft="20dp"
+        android:layout_marginVertical="10dp"
+        android:textSize="18sp"
+        android:layout_below="@id/calculateButton"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/suggestion"
+        android:padding="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="Suggestion"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_background"
+        android:layout_below="@id/suggestion_title"
+        />
+
+    <TextView
+        android:id="@+id/title_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Value (RM/l)"
+        android:layout_below="@id/suggestion"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+    <GridLayout
+        android:id="@+id/gridLayoutResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#887B7B"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/title_result"
+        >
+
+        <RelativeLayout
+            android:id="@+id/resultA_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:background="#DD9D9D"
+            >
+
+        <TextView
+            android:id="@+id/resultA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:textSize="25sp"
+            android:textColor="#000000"
+            android:layout_centerHorizontal="true"
+            android:padding="15dp"
+            />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/resultB_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:background="#AA8F98"
+            >
+
+            <TextView
+                android:id="@+id/resultB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B"
+                android:textSize="25sp"
+                android:textColor="#000000"
+                android:layout_centerHorizontal="true"
+                android:padding="15dp"
+                />
+
+        </RelativeLayout>
+
+
+    </GridLayout>
+
+
+</RelativeLayout>
