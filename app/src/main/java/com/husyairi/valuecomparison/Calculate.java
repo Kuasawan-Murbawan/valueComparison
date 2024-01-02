@@ -13,9 +13,9 @@ public class Calculate extends AppCompatActivity {
 
     EditText quantityA, volumeA, priceA, quantityB, volumeB, priceB;
 
-    TextView resultA, resultB, suggestion;
+    TextView resultA, resultB, suggestion, difference;
 
-    Button calculateBtn;
+    Button calculateBtn, resetBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class Calculate extends AppCompatActivity {
         resultB = findViewById(R.id.resultB);
 
         suggestion = findViewById(R.id.suggestion);
+        difference = findViewById(R.id.difference);
         calculateBtn = findViewById(R.id.calculateButton);
 
         calculateBtn.setOnClickListener(new View.OnClickListener() {
@@ -69,19 +70,45 @@ public class Calculate extends AppCompatActivity {
                     String formattedValueB = String.format("%.2f", valueB); // Limit to 2 decimal places
                     resultB.setText(String.valueOf(formattedValueB));
 
+                    double dif = 0;
+
                     // Compare valueA and valueB
-                    if (valueA > valueB) {
+                    if (valueA < valueB) {
                         suggestion.setText(R.string.berbaloi_a);
-                    } else if (valueA < valueB) {
+                        dif = valueB - valueA;
+                    } else if (valueA > valueB) {
                         suggestion.setText(R.string.berbaloi_b);
+                        dif = valueA - valueB;
+
                     } else {
                         suggestion.setText("Both are equally berbaloi");
                     }
+                    String formattedDifference = String.format("%.2f", dif); // Limit to 2 decimal places
+                    difference.setText(String.valueOf(formattedDifference));
 
                 }catch (NumberFormatException e){
                     Log.e("Calculate", "Invalid input: " + e.getMessage());
                     suggestion.setText("Please enter valid numbers");
                 }
+
+            }
+        });
+
+        resetBtn = findViewById(R.id.resetButton);
+
+        resetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                quantityA.setText(null);
+                volumeA.setText(null);
+                priceA.setText(null);
+                resultA.setText(null);
+                quantityB.setText(null);
+                volumeB.setText(null);
+                priceB.setText(null);
+                resultB.setText(null);
+                difference.setText(null);
+                suggestion.setText(null);
 
             }
         });
