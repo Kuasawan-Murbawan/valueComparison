@@ -2,11 +2,13 @@ package com.husyairi.valuecomparison;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Calculate extends AppCompatActivity {
@@ -15,6 +17,8 @@ public class Calculate extends AppCompatActivity {
 
     TextView resultA, resultB, suggestion, difference;
 
+    RelativeLayout layoutA, layoutB, layoutResultA, layoutResultB;
+
     Button calculateBtn, resetBtn;
 
     @Override
@@ -22,6 +26,13 @@ public class Calculate extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate);
         getSupportActionBar().hide();
+
+        layoutA = findViewById(R.id.productA_layout);
+        layoutB = findViewById(R.id.productB_layout);
+        layoutResultA = findViewById(R.id.resultA_layout);
+        layoutResultB = findViewById(R.id.resultB_layout);
+
+
 
         quantityA = findViewById(R.id.quantityA);
         volumeA = findViewById(R.id.volumeA);
@@ -36,6 +47,12 @@ public class Calculate extends AppCompatActivity {
         suggestion = findViewById(R.id.suggestion);
         difference = findViewById(R.id.difference);
         calculateBtn = findViewById(R.id.calculateButton);
+
+        // Feature : add weighted score (the quality, ketahanan, how much you like, is it worth the 1 ringgit difference?)
+
+        // TODO: more details
+        //          - to 3 decimal points
+        //          - add colours to the ones that is more berbaloi
 
         calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,10 +72,10 @@ public class Calculate extends AppCompatActivity {
                     String valuequantityB = quantityB.getText().toString();
                     double qttB = Double.parseDouble(valuequantityB);
 
-                    String valuevolumeB = volumeA.getText().toString();
+                    String valuevolumeB = volumeB.getText().toString();
                     double volB = Double.parseDouble(valuevolumeB);
 
-                    String valuepriceB = priceA.getText().toString();
+                    String valuepriceB = priceB.getText().toString();
                     double prcB = Double.parseDouble(valuepriceB);
 
                     double valueA = prcA / (qttA * volA);
@@ -76,6 +93,10 @@ public class Calculate extends AppCompatActivity {
                     if (valueA < valueB) {
                         suggestion.setText(R.string.berbaloi_a);
                         dif = valueB - valueA;
+                        //layoutA.setBackgroundColor(Color.parseColor("#00CF00"));
+                        //layoutResultA.setBackgroundColor(Color.parseColor("#00CF00"));
+
+
                     } else if (valueA > valueB) {
                         suggestion.setText(R.string.berbaloi_b);
                         dif = valueA - valueB;

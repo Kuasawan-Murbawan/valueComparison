@@ -18,7 +18,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Calculate Value"
+        android:text="Mana lagi Berbaloi?"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -42,7 +42,6 @@
             android:backgroundTint="#DD9D9D"
             >
 
-
             <TextView
                 android:id="@+id/productA"
                 android:layout_width="wrap_content"
@@ -55,7 +54,7 @@
 
             <EditText
                 android:id="@+id/quantityA"
-                android:layout_width="167dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:hint="Quantity"
                 android:layout_below="@+id/productA"
@@ -75,7 +74,7 @@
 
             <EditText
                 android:id="@+id/priceA"
-                android:layout_width="167dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/volumeA"
                 android:hint="Price"
@@ -111,7 +110,7 @@
 
             <EditText
                 android:id="@+id/quantityB"
-                android:layout_width="167dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:hint="Quantity"
                 android:layout_below="@+id/productB"
@@ -131,7 +130,7 @@
 
             <EditText
                 android:id="@+id/priceB"
-                android:layout_width="167dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/volumeB"
                 android:hint="Price"
