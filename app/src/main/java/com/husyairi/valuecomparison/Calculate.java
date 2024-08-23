@@ -32,8 +32,6 @@ public class Calculate extends AppCompatActivity {
         layoutResultA = findViewById(R.id.resultA_layout);
         layoutResultB = findViewById(R.id.resultB_layout);
 
-
-
         quantityA = findViewById(R.id.quantityA);
         volumeA = findViewById(R.id.volumeA);
         priceA = findViewById(R.id.priceA);
