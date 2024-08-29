@@ -13,3 +13,8 @@ Compare the value between 2 products using their quantity, volume and price.
 ### Result
 ![result](https://github.com/Kuasawan-Murbawan/valueComparison/assets/74280845/ca3ca8d0-71c5-4037-91a1-b64ea473ae7c)
 
+## Future Work
+ 
+ - [ ] add more details (decimal points)
+ - [ ] add colour changing to signify mana lagi berbaloi
+ - [ ] change app name 
